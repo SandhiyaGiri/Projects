@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Market Stats Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Financial Market Stats Dashboard</h1>
+        
+        <div class="row mb-4">
+            <div class="col-md-3 mb-2">
+                <select id="countrySelect" class="form-select">
+                    <option value="US">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="IN">India</option>
+                    <option value="JP">Japan</option>
+                </select>
+            </div>
+            <div class="col-md-3 mb-2">
+                <select id="indexSelect" class="form-select">
+                    <option value="">No Index</option>
+                </select>
+            </div>
+            <div class="col-md-3 mb-2">
+                <select id="stock1Select" class="form-select">
+                    <!-- Options populated by JS -->
+                </select>
+            </div>
+            <div class="col-md-3 mb-2">
+                <select id="stock2Select" class="form-select">
+                    <!-- Options populated by JS -->
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3 mb-2">
+                <input type="date" id="startDate" class="form-control" placeholder="Start Date">
+            </div>
+            <div class="col-md-3 mb-2">
+                <input type="date" id="endDate" class="form-control" placeholder="End Date">
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <button id="compareBtn" class="btn btn-primary">Compare</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title" id="comparisonTitle">Stock Comparison</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="comparisonChart"></canvas>
+                        <div class="row mt-4">
+                            <div class="col-md-6" id="stock1Stats"></div>
+                            <div class="col-md-6" id="stock2Stats"></div>
+                        </div>
+                        <div class="row mt-2" id="indexStatsRow" style="display:none;">
+                            <div class="col-12" id="indexStats"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/stats.js"></script>
+    <script src="js/charts.js"></script>
+</body>
+</html> 
